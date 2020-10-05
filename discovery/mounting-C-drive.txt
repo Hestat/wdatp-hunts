@@ -1,0 +1,2 @@
+DeviceFileEvents
+| where RequestProtocol == "Smb" and RequestAccountName != "SYSTEM" and ShareName == "C$"

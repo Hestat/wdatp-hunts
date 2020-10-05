@@ -1,0 +1,2 @@
+DeviceProcessEvents
+| where ProcessCommandLine contains "127.0.0.1" and ProcessCommandLine contains "2>&1" and (ProcessCommandLine contains "ADMIN$" or ProcessCommandLine contains "C$" or ProcessCommandLine contains "IPC$")

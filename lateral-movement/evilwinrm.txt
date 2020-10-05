@@ -1,0 +1,2 @@
+DeviceNetworkEvents
+| where InitiatingProcessFileName contains "ruby.exe" and RemotePort between (5985 .. 5986)

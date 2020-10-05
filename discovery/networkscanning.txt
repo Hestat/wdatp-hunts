@@ -1,0 +1,6 @@
+DeviceProcessEvents 
+| where (FolderPath contains "\\advanced_ip_scanner" or FolderPath contains "\\Angry IP Scanner")
+or (FileName == "NS.exe" or FileName == "ipscan.exe" or FileName == "nmap.exe" or FileName == "zenmap.exe")
+or (MD5 == "597de376b1f80c06d501415dd973dcec") // md5sum for NS.exe fileshare scanner seen used in Dharma ransomware events
+| where Timestamp > ago(7d)
+| project Timestamp, FileName, ProcessCommandLine, DeviceName, InitiatingProcessFileName, InitiatingProcessCommandLine, AccountName
