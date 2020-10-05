@@ -1,0 +1,6 @@
+DeviceRegistryEvents
+| where ActionType == "RegistryValueSet"
+| where RegistryValueData contains "comspec"
+or (RegistryValueData contains "powershell" and RegistryValueData contains "-w")
+or (RegistryValueData contains "powershell" and RegistryValueData contains "-nop")
+or (RegistryValueData contains "powershell" and RegistryValueData contains "-noni")
