@@ -1,0 +1,7 @@
+DeviceProcessEvents
+| where FileName == "csc.exe"
+| where InitiatingProcessParentFileName == "svchost.exe"
+| where ProcessCommandLine contains "appdata"
+| where InitiatingProcessFileName == "powershell.exe"
+| where ProcessIntegrityLevel == "High"
+| where InitiatingProcessTokenElevation == "TokenElevationTypeFull"
